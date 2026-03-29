@@ -15,10 +15,10 @@ interface Props {
 }
 
 const fields: { key: keyof CandidateFiles; label: string; icon: React.ReactNode }[] = [
-  { key: "cv", label: "CV / Resume (PDF)", icon: <FileText className="h-3.5 w-3.5" /> },
-  { key: "supervisorNotes", label: "Supervisor Notes (PDF)", icon: <MessageSquare className="h-3.5 w-3.5" /> },
-  { key: "recommendationLetter", label: "Recommendation Letter (PDF)", icon: <Award className="h-3.5 w-3.5" /> },
-  { key: "peerReviews", label: "Peer / Manager Reviews (PDF)", icon: <Users className="h-3.5 w-3.5" /> },
+  { key: "cv", label: "CV / Resume", icon: <FileText className="h-3.5 w-3.5" /> },
+  { key: "supervisorNotes", label: "Supervisor Notes", icon: <MessageSquare className="h-3.5 w-3.5" /> },
+  { key: "recommendationLetter", label: "Recommendation Letter", icon: <Award className="h-3.5 w-3.5" /> },
+  { key: "peerReviews", label: "Peer / Manager Reviews", icon: <Users className="h-3.5 w-3.5" /> },
 ];
 
 const CandidateInputSection = ({ title, subtitle, icon, files, onFilesChange }: Props) => {
