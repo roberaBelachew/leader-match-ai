@@ -59,9 +59,9 @@ const Index = () => {
   const extractTexts = async (files: CandidateFiles): Promise<CandidateInput> => {
     const extract = async (file: File | null): Promise<string> => {
       if (!file) return "";
-      try { return await extractTextFromPdf(file); } catch (err) {
-        console.error("PDF extraction error:", err);
-        toast.error(`Failed to parse ${file.name}. Ensure it's a valid PDF.`);
+      try { return await extractTextFromFile(file); } catch (err) {
+        console.error("File extraction error:", err);
+        toast.error(`Failed to parse ${file.name}. Try a different format.`);
         return "";
       }
     };
