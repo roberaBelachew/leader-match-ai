@@ -11,7 +11,7 @@ import BulkAnalysisSection from "@/components/BulkAnalysisSection";
 import PerformanceTrackingSection from "@/components/PerformanceTrackingSection";
 import AnalyticsSection from "@/components/AnalyticsSection";
 import ExportSection from "@/components/ExportSection";
-import { extractTextFromPdf } from "@/lib/pdf-utils";
+import { extractTextFromFile } from "@/lib/file-utils";
 import type { CandidateFiles, CandidateInput, AnalysisResult, BusinessFunction } from "@/lib/types";
 import { Zap, TrendingUp, Shield, Users, Loader2, Factory, Cog, Lightbulb, Settings } from "lucide-react";
 

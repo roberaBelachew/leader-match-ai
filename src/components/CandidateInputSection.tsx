@@ -70,10 +70,11 @@ const CandidateInputSection = ({ title, subtitle, icon, files, onFilesChange }: 
                   onClick={() => inputRefs.current[f.key]?.click()}
                 >
                   <Upload className="h-4 w-4" />
-                  <span>Click to upload PDF</span>
+                  <span>Click to upload file</span>
+                  <span className="text-xs opacity-60">({SUPPORTED_FORMATS_LABEL})</span>
                 </div>
               )}
-              <input ref={(el) => { inputRefs.current[f.key] = el; }} type="file" accept=".pdf" className="hidden"
+              <input ref={(el) => { inputRefs.current[f.key] = el; }} type="file" accept={SUPPORTED_EXTENSIONS} className="hidden"
                 onChange={(e) => handleFileChange(f.key, e.target.files?.[0] || null)} />
             </div>
           );
