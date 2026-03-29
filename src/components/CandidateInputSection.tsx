@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import type { CandidateFiles } from "@/lib/types";
+import { SUPPORTED_EXTENSIONS, SUPPORTED_FORMATS_LABEL } from "@/lib/file-utils";
 import { FileText, MessageSquare, Award, Users, Upload, X, CheckCircle } from "lucide-react";
 
 interface Props {
@@ -14,10 +15,10 @@ interface Props {
 }
 
 const fields: { key: keyof CandidateFiles; label: string; icon: React.ReactNode }[] = [
-  { key: "cv", label: "CV / Resume (PDF)", icon: <FileText className="h-3.5 w-3.5" /> },
-  { key: "supervisorNotes", label: "Supervisor Notes (PDF)", icon: <MessageSquare className="h-3.5 w-3.5" /> },
-  { key: "recommendationLetter", label: "Recommendation Letter (PDF)", icon: <Award className="h-3.5 w-3.5" /> },
-  { key: "peerReviews", label: "Peer / Manager Reviews (PDF)", icon: <Users className="h-3.5 w-3.5" /> },
+  { key: "cv", label: "CV / Resume", icon: <FileText className="h-3.5 w-3.5" /> },
+  { key: "supervisorNotes", label: "Supervisor Notes", icon: <MessageSquare className="h-3.5 w-3.5" /> },
+  { key: "recommendationLetter", label: "Recommendation Letter", icon: <Award className="h-3.5 w-3.5" /> },
+  { key: "peerReviews", label: "Peer / Manager Reviews", icon: <Users className="h-3.5 w-3.5" /> },
 ];
 
 const CandidateInputSection = ({ title, subtitle, icon, files, onFilesChange }: Props) => {
@@ -69,10 +70,11 @@ const CandidateInputSection = ({ title, subtitle, icon, files, onFilesChange }: 
                   onClick={() => inputRefs.current[f.key]?.click()}
                 >
                   <Upload className="h-4 w-4" />
-                  <span>Click to upload PDF</span>
+                  <span>Click to upload file</span>
+                  <span className="text-xs opacity-60">({SUPPORTED_FORMATS_LABEL})</span>
                 </div>
               )}
-              <input ref={(el) => { inputRefs.current[f.key] = el; }} type="file" accept=".pdf" className="hidden"
+              <input ref={(el) => { inputRefs.current[f.key] = el; }} type="file" accept={SUPPORTED_EXTENSIONS} className="hidden"
                 onChange={(e) => handleFileChange(f.key, e.target.files?.[0] || null)} />
             </div>
           );
