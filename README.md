@@ -53,6 +53,6 @@ Fully configured testing fixtures for validating complex user flows and data ing
 ## Development
 
 This project utilizes the Bun runtime for high-performance dependency resolution
-
+```bash
 bun install  
 bun run dev
