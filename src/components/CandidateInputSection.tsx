@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import type { CandidateFiles } from "@/lib/types";
+import { SUPPORTED_EXTENSIONS, SUPPORTED_FORMATS_LABEL } from "@/lib/file-utils";
 import { FileText, MessageSquare, Award, Users, Upload, X, CheckCircle } from "lucide-react";
 
 interface Props {
